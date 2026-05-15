@@ -1,0 +1,57 @@
+name: resumate
+description: "AI-powered resume to website generator"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Networking
+  dio: ^5.7.0
+
+  # Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_secure_storage: ^9.2.2
+  encrypt: ^5.0.3
+
+  # PDF parsing + file picking
+  syncfusion_flutter_pdf: ^27.1.48
+  file_picker: ^8.1.2
+
+  # UI
+  flutter_animate: ^4.5.2
+  google_fonts: ^6.2.1
+  go_router: ^14.3.0
+  webview_flutter: ^4.10.0
+  highlight: ^0.7.0
+
+  # Utilities
+  crypto: ^3.0.5
+  path_provider: ^2.1.5
+  url_launcher: ^6.3.1
+  uuid: ^4.4.2
+
+  # Firebase (GenKit backend)
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.4
+  cloud_functions: ^5.1.4
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
