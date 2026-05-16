@@ -7,11 +7,22 @@ import 'package:uuid/uuid.dart';
 final localStorageProvider = Provider<LocalStorage>((_) => LocalStorage());
 
 final genKitClientProvider = Provider<GenKitClient>((_) => GenKitClient(
-      baseUrl: const String.fromEnvironment(
-        'GENKIT_BASE_URL',
-        defaultValue: 'https://us-central1-YOUR_PROJECT.cloudfunctions.net',
+      endpoint: const String.fromEnvironment(
+        'AZURE_OPENAI_ENDPOINT',
+        defaultValue: 'https://your-endpoint.openai.azure.com/',
       ),
-      apiKey: const String.fromEnvironment('GENKIT_API_KEY', defaultValue: ''),
+      apiKey: const String.fromEnvironment(
+        'AZURE_OPENAI_API_KEY',
+        defaultValue: 'your-api-key-here',
+      ),
+      apiVersion: const String.fromEnvironment(
+        'AZURE_OPENAI_API_VERSION',
+        defaultValue: '2024-12-01-preview',
+      ),
+      deploymentName: const String.fromEnvironment(
+        'AZURE_DEPLOYMENT_NAME',
+        defaultValue: 'gpt-4-turbo',
+      ),
     ));
 
 // ── Resume state ──────────────────────────────────────────────────────────────

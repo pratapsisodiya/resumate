@@ -49,6 +49,8 @@ class _GenerationScreenState extends ConsumerState<GenerationScreen> {
     'Finalizing…',
   ];
 
+  // Stage strings match exactly what AzureOpenAI client yields in generateWebsiteStream()
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(websiteProvider);

@@ -60,26 +60,35 @@ class WebsiteNotifier extends StateNotifier<WebsiteState> {
   }) async {
     state = const WebsiteGenerating(stage: 'Analyzing resume…', progress: 0.05);
     try {
+      // Kick off the real API call immediately (runs in background)
+      final apiFuture = _genKit.generateWebsite(resume, template,
+          colorPreference: colorPreference);
+
+      // Emit simulated progress stages while the API call is in flight
       if (streaming) {
-        await for (final progress in _genKit.generateWebsiteStream(resume, template)) {
+        await for (final progress
+            in _genKit.generateWebsiteStream(resume, template)) {
           if (!mounted) return;
-          state = WebsiteGenerating(stage: progress.stage, progress: progress.progress);
+          state =
+              WebsiteGenerating(stage: progress.stage, progress: progress.progress);
         }
       }
-      final json = await _genKit.generateWebsite(resume, template,
-          colorPreference: colorPreference);
+
+      // Await the real result (likely already done by now)
+      final json = await apiFuture;
       final website = Website(
         id: const Uuid().v4(),
         name: _slug(resume.personalInfo.fullName),
         sourceResume: resume,
         template: template,
         colorScheme: json['colorScheme'] != null
-            ? ColorScheme.fromJson(Map<String, dynamic>.from(json['colorScheme'] as Map))
+            ? ColorScheme.fromJson(
+                Map<String, dynamic>.from(json['colorScheme'] as Map))
             : const ColorScheme(),
         htmlContent: json['htmlContent'] as String? ?? '',
         cssContent: json['cssContent'] as String?,
         jsContent: json['jsContent'] as String?,
-        modelUsed: json['modelUsed'] as String? ?? 'claude-3.5-sonnet',
+        modelUsed: json['modelUsed'] as String? ?? 'gpt-4.1-mini',
         tokensUsed: json['tokensUsed'] as int? ?? 0,
         generatedAt: DateTime.now(),
       );
