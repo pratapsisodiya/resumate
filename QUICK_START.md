@@ -27,17 +27,15 @@ git push origin main
 ### 3. Watch the Build
 
 - Go to **Actions** tab on GitHub
-- See the "Build Resumate" workflow running
-- Wait ~10-15 minutes for all platforms to build
+- See the "Build Android APK" workflow running
+- Wait ~5-8 minutes for Android build
 
 ### 4. Download Your App
 
 - Click the completed workflow run
 - Scroll to **Artifacts** section
-- Download:
-  - `resumate-android-apk` for Android
-  - `resumate-windows` for Windows
-  - `resumate-web` for web deploy
+- Download: `resumate-release-apk` 
+- Extract and install the APK on Android
 
 ---
 
@@ -85,10 +83,6 @@ Get these values from Azure Portal → Your OpenAI Resource → Keys and Endpoin
 ## ✨ You're Done!
 
 Once secrets are added and code is pushed, GitHub Actions will automatically build:
-- Android APK (install on any Android device)
-- Android AAB (upload to Google Play Store)
-- Windows EXE (run on Windows)
-- Web build (deploy to any static host)
-- iOS app (needs macOS to sign)
+- ✅ **Android APK** (ready to install on any Android device)
 
-No more manual builds needed — every push builds automatically! 🎉
+Fast builds in ~5-8 minutes — every push builds automatically! 🎉
