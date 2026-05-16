@@ -14,6 +14,10 @@ migrate_working_dir/
 
 .env
 
+# Local credentials (do not commit)
+*.local.json
+.vscode/launch.local.json
+
 # IntelliJ related
 *.iml
 *.ipr
