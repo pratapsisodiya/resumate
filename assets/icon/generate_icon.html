@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resumate Icon Generator</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f0f0f0; font-family: system-ui; }
+        canvas { border: 2px solid #ccc; margin: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        button { padding: 12px 24px; font-size: 16px; cursor: pointer; background: #6366F1; color: white; border: none; border-radius: 8px; margin: 10px; }
+        button:hover { background: #4F46E5; }
+    </style>
+</head>
+<body>
+    <h1>Resumate App Icon Generator</h1>
+    <p>Click "Generate" to create the icon, then right-click to save as PNG</p>
+    <button onclick="generate1024()">Generate 1024x1024 (Main)</button>
+    <button onclick="generate512()">Generate 512x512 (Foreground)</button>
+    <br>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        function drawIcon(canvas, size, isForeground = false) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+
+            // Background gradient (only for main icon)
+            if (!isForeground) {
+                const gradient = ctx.createLinearGradient(0, 0, size, size);
+                gradient.addColorStop(0, '#6366F1'); // indigo-500
+                gradient.addColorStop(0.5, '#8B5CF6'); // violet-500
+                gradient.addColorStop(1, '#F59E0B'); // amber-500
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, size, size);
+            } else {
+                ctx.clearRect(0, 0, size, size);
+            }
+
+            // Document/paper icon
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const docWidth = size * 0.45;
+            const docHeight = size * 0.55;
+            const cornerFold = size * 0.12;
+
+            ctx.save();
+
+            // White document with shadow
+            if (!isForeground) {
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+                ctx.shadowBlur = size * 0.03;
+                ctx.shadowOffsetX = size * 0.01;
+                ctx.shadowOffsetY = size * 0.02;
+            }
+
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.moveTo(centerX - docWidth/2, centerY - docHeight/2);
+            ctx.lineTo(centerX + docWidth/2 - cornerFold, centerY - docHeight/2);
+            ctx.lineTo(centerX + docWidth/2, centerY - docHeight/2 + cornerFold);
+            ctx.lineTo(centerX + docWidth/2, centerY + docHeight/2);
+            ctx.lineTo(centerX - docWidth/2, centerY + docHeight/2);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.restore();
+
+            // Corner fold
+            ctx.fillStyle = '#E5E7EB';
+            ctx.beginPath();
+            ctx.moveTo(centerX + docWidth/2 - cornerFold, centerY - docHeight/2);
+            ctx.lineTo(centerX + docWidth/2, centerY - docHeight/2 + cornerFold);
+            ctx.lineTo(centerX + docWidth/2 - cornerFold, centerY - docHeight/2 + cornerFold);
+            ctx.closePath();
+            ctx.fill();
+
+            // Lines on document (representing resume text)
+            ctx.strokeStyle = '#6366F1';
+            ctx.lineWidth = size * 0.015;
+            ctx.lineCap = 'round';
+
+            const lineStart = centerX - docWidth/2 + size * 0.08;
+            const lineEnd = centerX + docWidth/2 - size * 0.08;
+            const lines = [
+                centerY - docHeight/2 + size * 0.15,
+                centerY - docHeight/2 + size * 0.22,
+                centerY - docHeight/2 + size * 0.29,
+                centerY - docHeight/2 + size * 0.36,
+            ];
+
+            lines.forEach((y, i) => {
+                const endX = i === 3 ? lineEnd - size * 0.1 : lineEnd;
+                ctx.beginPath();
+                ctx.moveTo(lineStart, y);
+                ctx.lineTo(endX, y);
+                ctx.stroke();
+            });
+
+            // AI sparkle/star icon
+            const sparkleX = centerX + docWidth/2 - size * 0.1;
+            const sparkleY = centerY + docHeight/2 - size * 0.1;
+            const sparkleSize = size * 0.12;
+
+            // Circle background for sparkle
+            ctx.fillStyle = '#F59E0B';
+            ctx.beginPath();
+            ctx.arc(sparkleX, sparkleY, sparkleSize * 0.7, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Star
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            for (let i = 0; i < 8; i++) {
+                const angle = (i * Math.PI / 4) - Math.PI / 2;
+                const radius = i % 2 === 0 ? sparkleSize * 0.5 : sparkleSize * 0.2;
+                const x = sparkleX + Math.cos(angle) * radius;
+                const y = sparkleY + Math.sin(angle) * radius;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        function generate1024() {
+            const canvas = document.getElementById('canvas');
+            drawIcon(canvas, 1024, false);
+        }
+
+        function generate512() {
+            const canvas = document.getElementById('canvas');
+            drawIcon(canvas, 512, true);
+        }
+
+        // Generate main icon on load
+        window.onload = () => generate1024();
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "downloadUrl": "https://github.com/pratapsisodiya/resumate/releases/latest/download/app-release.apk",
+  "changelog": "Initial release\n• AI-powered resume parsing\n• Beautiful website generation\n• Multiple templates\n• Real-time preview\n• Export to HTML",
+  "mandatory": false
+}

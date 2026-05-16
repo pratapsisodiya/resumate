@@ -4,6 +4,8 @@ import 'package:resumate/screens/home_screen.dart';
 import 'package:resumate/screens/onboarding_screen.dart';
 import 'package:resumate/shared/theme/app_theme.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 class ResumateApp extends StatelessWidget {
   final bool showOnboarding;
   const ResumateApp({super.key, this.showOnboarding = false});
@@ -12,6 +14,7 @@ class ResumateApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         title: 'Resumate',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light(),
