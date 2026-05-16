@@ -105,7 +105,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
             surfaceTintColor: Colors.transparent,
             elevation: 0,
             shadowColor: Colors.transparent,
-            indicatorColor: AppTheme.primary.withValues(alpha: 0.12),
+            indicatorColor: AppTheme.primary.withOpacity(0.12),
             destinations: _destinations,
             animationDuration: const Duration(milliseconds: 300),
           ),
@@ -257,7 +257,7 @@ class _HeroBanner extends StatelessWidget {
               height: 120,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withValues(alpha: 0.06),
+                color: Colors.white.withOpacity(0.06),
               ),
             ),
           ),
@@ -271,7 +271,7 @@ class _HeroBanner extends StatelessWidget {
                     Text(
                       _greeting(),
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.75),
+                        color: Colors.white.withOpacity(0.75),
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
                       ),
@@ -292,7 +292,7 @@ class _HeroBanner extends StatelessWidget {
                     Text(
                       'Your AI portfolio builder',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.65),
+                        color: Colors.white.withOpacity(0.65),
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                       ),
@@ -315,10 +315,10 @@ class _HeroBanner extends StatelessWidget {
                         width: 40,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.15),
+                          color: Colors.white.withOpacity(0.15),
                           shape: BoxShape.circle,
                           border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.3)),
+                              color: Colors.white.withOpacity(0.3)),
                         ),
                         child: const Icon(Icons.chat_bubble_outline_rounded,
                             color: Colors.white, size: 18),
@@ -331,10 +331,10 @@ class _HeroBanner extends StatelessWidget {
                     width: 44,
                     height: 44,
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.2),
+                      color: Colors.white.withOpacity(0.2),
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.4), width: 2),
+                          color: Colors.white.withOpacity(0.4), width: 2),
                     ),
                     child: Center(
                       child: Text(initials,
@@ -417,7 +417,7 @@ class _TipsBannerState extends State<_TipsBanner> {
                   border: Border.all(color: AppTheme.border),
                   boxShadow: [
                     BoxShadow(
-                      color: tip.color.withValues(alpha: 0.06),
+                      color: tip.color.withOpacity(0.06),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
@@ -429,7 +429,7 @@ class _TipsBannerState extends State<_TipsBanner> {
                       width: 44,
                       height: 44,
                       decoration: BoxDecoration(
-                        color: tip.color.withValues(alpha: 0.1),
+                        color: tip.color.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(tip.icon, color: tip.color, size: 22),
@@ -512,7 +512,7 @@ class _ScoreHeadline extends StatelessWidget {
         border: Border.all(color: AppTheme.border),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
+            color: Colors.black.withOpacity(0.04),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -574,7 +574,7 @@ class _ScoreBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Text(label,
@@ -715,7 +715,7 @@ class _GridTileState extends State<_GridTile> {
               boxShadow: widget.enabled
                   ? [
                       BoxShadow(
-                        color: widget.gradient.first.withValues(alpha: 0.3),
+                        color: widget.gradient.first.withOpacity(0.3),
                         blurRadius: 14,
                         offset: const Offset(0, 6),
                       ),
@@ -729,7 +729,7 @@ class _GridTileState extends State<_GridTile> {
                   width: 36,
                   height: 36,
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
+                    color: Colors.white.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(widget.icon, color: Colors.white, size: 20),
@@ -742,7 +742,7 @@ class _GridTileState extends State<_GridTile> {
                         fontSize: 15)),
                 Text(widget.sub,
                     style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.75),
+                        color: Colors.white.withOpacity(0.75),
                         fontSize: 11)),
               ],
             ),
@@ -837,7 +837,7 @@ class _StatusCard extends StatelessWidget {
           border: Border.all(color: AppTheme.border),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.03),
+              color: Colors.black.withOpacity(0.03),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -852,7 +852,7 @@ class _StatusCard extends StatelessWidget {
                   width: 34,
                   height: 34,
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(9),
                   ),
                   child: Icon(icon, color: color, size: 18),
@@ -950,7 +950,7 @@ class _ActivityFeed extends StatelessWidget {
                       height: 28,
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                       decoration: BoxDecoration(
-                        color: ev.color.withValues(alpha: 0.1),
+                        color: ev.color.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(ev.icon, size: 14, color: ev.color),
@@ -1141,21 +1141,21 @@ class _BioBanner extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppTheme.primary.withValues(alpha: 0.06),
-            AppTheme.secondary.withValues(alpha: 0.04),
+            AppTheme.primary.withOpacity(0.06),
+            AppTheme.secondary.withOpacity(0.04),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(14),
         border:
-            Border.all(color: AppTheme.primary.withValues(alpha: 0.12)),
+            Border.all(color: AppTheme.primary.withOpacity(0.12)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(Icons.format_quote_rounded,
-              color: AppTheme.primary.withValues(alpha: 0.5), size: 20),
+              color: AppTheme.primary.withOpacity(0.5), size: 20),
           const SizedBox(width: 10),
           Expanded(
             child: Text(bio,
@@ -1236,7 +1236,7 @@ class _SkillBarsCardState extends State<_SkillBarsCard>
                     width: 36,
                     height: 36,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                      color: const Color(0xFF10B981).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Icon(Icons.code_rounded,
@@ -1251,7 +1251,7 @@ class _SkillBarsCardState extends State<_SkillBarsCard>
                     padding:
                         const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                      color: const Color(0xFF10B981).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text('${widget.skills.length}',
@@ -1561,7 +1561,7 @@ class _SectionTileState extends State<_SectionTile> {
                     width: 36,
                     height: 36,
                     decoration: BoxDecoration(
-                      color: widget.color.withValues(alpha: 0.1),
+                      color: widget.color.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(widget.icon, color: widget.color, size: 18),
@@ -1577,7 +1577,7 @@ class _SectionTileState extends State<_SectionTile> {
                         horizontal: 9, vertical: 3),
                     decoration: BoxDecoration(
                       color: widget.count > 0
-                          ? widget.color.withValues(alpha: 0.1)
+                          ? widget.color.withOpacity(0.1)
                           : const Color(0xFFF3F4F6),
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -1790,7 +1790,7 @@ class _WebsiteHero extends StatelessWidget {
                 width: 160, height: 160,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withValues(alpha: 0.07),
+                  color: Colors.white.withOpacity(0.07),
                 ),
               ),
             ),
@@ -1800,7 +1800,7 @@ class _WebsiteHero extends StatelessWidget {
                 width: 100, height: 100,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withValues(alpha: 0.05),
+                  color: Colors.white.withOpacity(0.05),
                 ),
               ),
             ),
@@ -1810,10 +1810,10 @@ class _WebsiteHero extends StatelessWidget {
               child: Container(
                 height: 32,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.15),
+                  color: Colors.white.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.2)),
+                      color: Colors.white.withOpacity(0.2)),
                 ),
                 child: Row(
                   children: [
@@ -1822,7 +1822,7 @@ class _WebsiteHero extends StatelessWidget {
                       width: 8, height: 8,
                       margin: const EdgeInsets.only(right: 4),
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.35),
+                        color: Colors.white.withOpacity(0.35),
                         shape: BoxShape.circle,
                       ),
                     )),
@@ -1831,14 +1831,14 @@ class _WebsiteHero extends StatelessWidget {
                       child: Container(
                         height: 18,
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.15),
+                          color: Colors.white.withOpacity(0.15),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Center(
                           child: Text(
                             '${nameSlug(website.name)}.vercel.app',
                             style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.8),
+                              color: Colors.white.withOpacity(0.8),
                               fontSize: 10,
                               fontWeight: FontWeight.w500,
                             ),
@@ -1877,12 +1877,12 @@ class _WebsiteHero extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.18),
+                            color: Colors.white.withOpacity(0.18),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text('Tap to preview',
                               style: TextStyle(
-                                  color: Colors.white.withValues(alpha: 0.9),
+                                  color: Colors.white.withOpacity(0.9),
                                   fontSize: 11,
                                   fontWeight: FontWeight.w500)),
                         ),
@@ -1901,19 +1901,19 @@ class _WebsiteHero extends StatelessWidget {
                 children: [
                   Text('My Website',
                       style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.9),
+                          color: Colors.white.withOpacity(0.9),
                           fontWeight: FontWeight.w700,
                           fontSize: 17)),
                   Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 8, vertical: 3),
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.2),
+                      color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(timeAgo(website.generatedAt),
                         style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.85),
+                            color: Colors.white.withOpacity(0.85),
                             fontSize: 11,
                             fontWeight: FontWeight.w500)),
                   ),
@@ -1935,13 +1935,13 @@ class _TemplateBadge extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.18),
+          color: Colors.white.withOpacity(0.18),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.25)),
+          border: Border.all(color: Colors.white.withOpacity(0.25)),
         ),
         child: Text(template.name[0].toUpperCase() + template.name.substring(1),
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.95),
+                color: Colors.white.withOpacity(0.95),
                 fontSize: 11,
                 fontWeight: FontWeight.w600)),
       );
@@ -2164,7 +2164,7 @@ class _WebsiteFiles extends StatelessWidget {
                         width: 32,
                         height: 32,
                         decoration: BoxDecoration(
-                          color: AppTheme.primary.withValues(alpha: 0.08),
+                          color: AppTheme.primary.withOpacity(0.08),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child:
@@ -2270,8 +2270,8 @@ class _WebsiteGeneratingView extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppTheme.primary.withValues(alpha: 0.15),
-                      AppTheme.secondary.withValues(alpha: 0.15),
+                      AppTheme.primary.withOpacity(0.15),
+                      AppTheme.secondary.withOpacity(0.15),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(20),
@@ -2782,7 +2782,7 @@ class _MenuItem extends StatelessWidget {
               height: 38,
               decoration: BoxDecoration(
                 color: enabled
-                    ? color.withValues(alpha: 0.1)
+                    ? color.withOpacity(0.1)
                     : const Color(0xFFF3F4F6),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -2874,8 +2874,8 @@ class _EmptyTabView extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppTheme.primary.withValues(alpha: 0.12),
-                      AppTheme.secondary.withValues(alpha: 0.12),
+                      AppTheme.primary.withOpacity(0.12),
+                      AppTheme.secondary.withOpacity(0.12),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(22),

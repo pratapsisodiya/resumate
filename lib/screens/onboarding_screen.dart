@@ -147,12 +147,12 @@ class _OnboardPage extends StatelessWidget {
               Positioned(
                 top: -60,
                 right: -60,
-                child: _Blob(size: 240, color: Colors.white.withValues(alpha: 0.08)),
+                child: _Blob(size: 240, color: Colors.white.withOpacity(0.08)),
               ),
               Positioned(
                 bottom: -40,
                 left: -40,
-                child: _Blob(size: 180, color: Colors.white.withValues(alpha: 0.06)),
+                child: _Blob(size: 180, color: Colors.white.withOpacity(0.06)),
               ),
               // Central illustration
               Center(
@@ -258,7 +258,7 @@ class _ResumeIllustrationState extends State<_ResumeIllustration>
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.18),
+                  color: Colors.black.withOpacity(0.18),
                   blurRadius: 40,
                   offset: const Offset(0, 20),
                 ),
@@ -271,7 +271,7 @@ class _ResumeIllustrationState extends State<_ResumeIllustration>
                 // Avatar
                 CircleAvatar(
                   radius: 24,
-                  backgroundColor: AppTheme.primary.withValues(alpha: 0.15),
+                  backgroundColor: AppTheme.primary.withOpacity(0.15),
                   child: const Icon(Icons.person_rounded,
                       color: AppTheme.primary, size: 28),
                 ),
@@ -295,7 +295,7 @@ class _ResumeIllustrationState extends State<_ResumeIllustration>
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
-                              color: AppTheme.primary.withValues(alpha: 0.1),
+                              color: AppTheme.primary.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(t,
@@ -340,7 +340,7 @@ class _EditorIllustration extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.35),
+            color: Colors.black.withOpacity(0.35),
             blurRadius: 48,
             offset: const Offset(0, 24),
           ),
@@ -460,7 +460,7 @@ class _DeployIllustrationState extends State<_DeployIllustration>
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.15),
+              color: Colors.black.withOpacity(0.15),
               blurRadius: 40,
               offset: const Offset(0, 20),
             ),
@@ -579,7 +579,7 @@ class _BottomNav extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: active
                       ? AppTheme.primary
-                      : AppTheme.primary.withValues(alpha: 0.2),
+                      : AppTheme.primary.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(4),
                 ),
               );

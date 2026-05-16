@@ -96,7 +96,7 @@ class _ScoreRingState extends State<ScoreRing>
           painter: _RingPainter(
             progress: _anim.value,
             color: color,
-            trackColor: color.withValues(alpha: 0.12),
+            trackColor: color.withOpacity(0.12),
             strokeWidth: widget.size * 0.1,
           ),
           child: Center(
@@ -117,7 +117,7 @@ class _ScoreRingState extends State<ScoreRing>
                   style: TextStyle(
                     fontSize: widget.size * 0.13,
                     fontWeight: FontWeight.w500,
-                    color: color.withValues(alpha: 0.7),
+                    color: color.withOpacity(0.7),
                     height: 1,
                   ),
                 ),

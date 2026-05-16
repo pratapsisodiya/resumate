@@ -159,7 +159,7 @@ class _HelpText extends StatelessWidget {
         color: Theme.of(context)
             .colorScheme
             .surfaceContainerHighest
-            .withValues(alpha: 0.5),
+            .withOpacity(0.5),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(

@@ -6,7 +6,9 @@
       "Bash(git commit -m 'Integrate Azure OpenAI for all AI features *)",
       "Bash(git push *)",
       "Bash(git commit --amend -m 'Integrate Azure OpenAI for all AI features *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(flutter build *)",
+      "Bash(timeout 20 bash -c 'tail -f \"C:\\\\Users\\\\prata\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--testing-resumate\\\\f984a0b2-90e7-4a81-bf7d-ed2aeb3ecc07\\\\tasks\\\\bp6onvjep.output\" 2>/dev/null')"
     ],
     "additionalDirectories": [
       "D:\\testing\\resumate"

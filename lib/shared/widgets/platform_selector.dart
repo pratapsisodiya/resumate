@@ -35,11 +35,11 @@ class PlatformSelectorTile<T> extends StatelessWidget {
             border: Border.all(
               color: isSelected
                   ? theme.colorScheme.primary
-                  : theme.colorScheme.outline.withValues(alpha: 0.4),
+                  : theme.colorScheme.outline.withOpacity(0.4),
               width: isSelected ? 2 : 1,
             ),
             color: isSelected
-                ? theme.colorScheme.primaryContainer.withValues(alpha: 0.3)
+                ? theme.colorScheme.primaryContainer.withOpacity(0.3)
                 : null,
           ),
           padding: const EdgeInsets.all(14),

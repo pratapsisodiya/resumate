@@ -313,12 +313,12 @@ class _PdfTabState extends State<_PdfTab> {
               padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 24),
               decoration: BoxDecoration(
                 color: _fileName != null
-                    ? AppTheme.primary.withValues(alpha: 0.04)
+                    ? AppTheme.primary.withOpacity(0.04)
                     : const Color(0xFFF9FAFB),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: _fileName != null
-                      ? AppTheme.primary.withValues(alpha: 0.4)
+                      ? AppTheme.primary.withOpacity(0.4)
                       : const Color(0xFFE5E7EB),
                   width: _fileName != null ? 2 : 1.5,
                   strokeAlign: BorderSide.strokeAlignInside,
@@ -337,7 +337,7 @@ class _PdfTabState extends State<_PdfTab> {
                       Container(
                         width: 56, height: 56,
                         decoration: BoxDecoration(
-                          color: AppTheme.primary.withValues(alpha: 0.1),
+                          color: AppTheme.primary.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: const Icon(Icons.picture_as_pdf_rounded,

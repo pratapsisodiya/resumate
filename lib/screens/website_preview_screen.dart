@@ -119,7 +119,7 @@ class _WebsitePreviewScreenState extends ConsumerState<WebsitePreviewScreen>
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.12),
+                        color: Colors.black.withOpacity(0.12),
                         blurRadius: 32,
                         offset: const Offset(0, 8),
                       ),
